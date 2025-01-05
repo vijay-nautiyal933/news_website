@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">News Hub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search and Filter Section -->
+    <div class="container mt-4">
+        <h2 class="text-center">Search and Filter News</h2>
+        <form id="searchForm" class="row g-3">
+            <div class="col-md-4">
+                <input type="text" id="author" class="form-control" placeholder="Author">
+            </div>
+            <div class="col-md-4">
+                <input type="date" id="fromDate" class="form-control" placeholder="From Date">
+            </div>
+            <div class="col-md-4">
+                <input type="date" id="toDate" class="form-control" placeholder="To Date">
+            </div>
+            <div class="col-md-4">
+                <select id="type" class="form-control">
+                    <option value="">All Types</option>
+                    <option value="news">News</option>
+                    <option value="blog">Blog</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <input type="text" id="globalSearch" class="form-control" placeholder="Search Keywords">
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary w-100">Filter</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- News Section -->
+    <div class="container mt-5">
+        <h1 class="text-center">Latest News</h1>
+        <div id="newsContainer" class="row mt-4"></div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                        <div class="mt-3 text-center">
+                            <button type="button" class="btn btn-outline-danger w-100" id="googleLogin">Login with Google</button>
+                            <button type="button" class="btn btn-outline-dark w-100 mt-2" id="githubLogin">Login with GitHub</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-dark text-white py-5">
+        <div class="container">
+            <h1 class="text-center mb-4">Contact</h1>
+            
+            <!-- Connect Me Section -->
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h2>Connect Me</h2>
+                    <p>Below are the details to reach out to me!</p>
+                    <div class="contact-container">
+                        <div class="contact-item mb-3">
+                            <h4>Mobile Number</h4>
+                            <p><i class="fas fa-phone"></i> <a href="tel://6395494865">+91 6395494865</a></p>
+                        </div>
+                        <div class="contact-item mb-3">
+                            <h4>Email Id</h4>
+                            <p><i class="fas fa-envelope"></i> <a href="mailto:viju03uki@gmail.com">viju03uki@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Find Me Section -->
+                <div class="col-md-6 mb-4">
+                    <h3>Find Me On</h3>
+                    <div class="icons-container">
+                        <a href="https://www.linkedin.com/in/vijay-nautiyal" target="_blank" class="text-info h3 me-3"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://t.me/Vijaynautiyal" target="_blank" class="text-primary h3"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright Section -->
+            <div class="text-center mt-5">
+                <p class="mb-0">&copy; 2024 Sem Mukhem. This site is made by Vijay Nautiyal.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
